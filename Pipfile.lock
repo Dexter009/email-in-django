@@ -48,9 +48,6 @@
             ],
             "version": "==2.0"
         },
-        "Pillow":{
-            "version": "==5.0.0"
-        },
         "django-heroku": {
             "hashes": [
                 "sha256:193bacbe644a607642f6b60acd0a382d6abf4a1f7578f8d3eb10659457efe904",
