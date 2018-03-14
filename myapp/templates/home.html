@@ -17,12 +17,14 @@
 
 </head>
 <body>
+<center>
     <div class="formee">
+
         <h4>Please supply the Information</h4>
 <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
     {{form.as_p}}
     <input class="btn btn-default" type="submit" value="submit">
 
-</form></div>
+</form></div></center>
 </body>
 </html>
