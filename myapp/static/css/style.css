@@ -5,6 +5,7 @@ background-color:black;
 div.formee{
 background-color:azure;
 padding: 70px 0 40px; background-color: white; overflow: auto; margin-top:50px;
+width:wrap-content;
 }
 
 div.formee:hover{
