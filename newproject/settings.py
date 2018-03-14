@@ -84,7 +84,7 @@ DATABASES = {
         'NAME': config('DB_NAME'),
         'USER': config('DB_USER'),
         'PASSWORD': config('DB_PASSWORD'),
-        
+        'DB_HOST':config('DATABASE_URL'),
 
     }
 }
