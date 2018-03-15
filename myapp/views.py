@@ -10,6 +10,7 @@ def index(request):
         form=QuestionForm(request.POST,request.FILES)
 
         if form.is_valid():
+            form.save()
 
             name=form.cleaned_data['name']
             age=form.cleaned_data['age']
