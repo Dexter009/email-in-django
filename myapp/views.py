@@ -3,6 +3,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from myapp.forms import QuestionForm
+from newproject import settings
 
 
 def index(request):
@@ -17,7 +18,7 @@ def index(request):
             height=form.cleaned_data['height']
             image=request.FILES['image']
 
-            email=EmailMessage('the subject here','Name:'+name + '\n'+'Age:'+age +'\n'+'Height:'+height)#'johnmayor879@gmail.com',['defabc97110@gmail.com'])['nelsonmarcosdealmeida@gmail.com'])
+            email=EmailMessage('the subject here','Name:'+name + '\n'+'Age:'+age +'\n'+'Height:'+height,settings.DEFAULT_FROM_EMAIL,[settings.DEFAULT_TO_EMAIL])#'johnmayor879@gmail.com',['defabc97110@gmail.com'])['nelsonmarcosdealmeida@gmail.com'])
             email.attach(image.name,image.read(),image.content_type)
             email.send()
             #send_mail('the subject here','Name:'+name,'johnmayor879@gmail.com',['defabc97110@gmail.com'])
