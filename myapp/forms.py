@@ -7,6 +7,5 @@ class QuestionForm(forms.ModelForm):
 
     class Meta:
         model=Question
-        fields=['name','age','height']
+        fields=['name','age','height','image']
 
-    image=forms.FileField()
