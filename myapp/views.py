@@ -11,17 +11,19 @@ def index(request):
         form=QuestionForm(request.POST,request.FILES)
 
         if form.is_valid():
-            form.save()
+
 
             name=form.cleaned_data['name']
             age=form.cleaned_data['age']
             height=form.cleaned_data['height']
             image=request.FILES['image']
 
-            email=EmailMessage('the subject here','Name:'+name + '\n'+'Age:'+age +'\n'+'Height:'+height,settings.DEFAULT_FROM_EMAIL,[settings.DEFAULT_TO_EMAIL])#'johnmayor879@gmail.com',['defabc97110@gmail.com'])['nelsonmarcosdealmeida@gmail.com'])
+            email=EmailMessage('the subject here','Name:'+name + '\n'+'Age:'+age +'\n'+'Height:'+height,settings.DEFAULT_FROM_EMAIL,[settings.DEFAULT_TO_EMAIL])
             email.attach(image.name,image.read(),image.content_type)
             email.send()
-            #send_mail('the subject here','Name:'+name,'johnmayor879@gmail.com',['defabc97110@gmail.com'])
+
+            form.save()
+
             return render(request,'thank.html',{'name':name,'image':image})
 
     else:
